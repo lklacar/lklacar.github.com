@@ -151,12 +151,12 @@
                 var encoded = Base64.encode(markup);
 
                 $.ajax({
-                    url: 'https://api.github.com/repos/lklacar/lklacar.github.com/contents/index.html?access_token=ae38e98ff0a43aca3049a82acae002566b9e892c',    //Your api url
+                    url: 'https://api.github.com/repos/lklacar/lklacar.github.com/contents/index.html?access_token=b923f4db6f4da456aeb035c7db983c4869c107ac',    //Your api url
                     type: 'GET',   //type is any HTTP method
                     contentType: "json",
                     success: function (res) {
                         $.ajax({
-                            url: 'https://api.github.com/repos/lklacar/lklacar.github.com/contents/index.html?access_token=ae38e98ff0a43aca3049a82acae002566b9e892c',    //Your api url
+                            url: 'https://api.github.com/repos/lklacar/lklacar.github.com/contents/index.html?access_token=b923f4db6f4da456aeb035c7db983c4869c107ac',    //Your api url
                             type: 'PUT',   //type is any HTTP method
                             data: '{"message": "a commit message","content": "' + encoded + '", "sha": "' + res.sha + '"}',
                             success: function () {
@@ -181,6 +181,6 @@ Data:<br>
 
 <ul id="list">
 
-<li>Huh</li></ul>
+<li>wow</li></ul>
 
 </body>
