@@ -151,18 +151,20 @@
                 var encoded = Base64.encode(markup);
 
                 $.ajax({
-                    url: 'https://api.github.com/repos/lklacar/lklacar.github.com/contents/index.html?access_token=b923f4db6f4da456aeb035c7db983c4869c107ac',    //Your api url
+                    url: 'https://api.github.com/repos/lklacar/lklacar.github.com/contents/index.html?access_token=c8de165ef4b956d00ecc41d5de1e59c4ebe5ced4',    //Your api url
                     type: 'GET',   //type is any HTTP method
                     contentType: "json",
                     success: function (res) {
-                        $.ajax({
-                            url: 'https://api.github.com/repos/lklacar/lklacar.github.com/contents/index.html?access_token=b923f4db6f4da456aeb035c7db983c4869c107ac',    //Your api url
-                            type: 'PUT',   //type is any HTTP method
-                            data: '{"message": "a commit message","content": "' + encoded + '", "sha": "' + res.sha + '"}',
-                            success: function () {
+                        setTimeout(function () {
+                            $.ajax({
+                                url: 'https://api.github.com/repos/lklacar/lklacar.github.com/contents/index.html?access_token=c8de165ef4b956d00ecc41d5de1e59c4ebe5ced4',    //Your api url
+                                type: 'PUT',   //type is any HTTP method
+                                data: '{"message": "a commit message","content": "' + encoded + '", "sha": "' + res.sha + '"}',
+                                success: function () {
 
-                            }
-                        })
+                                }
+                            })
+                        }, 1000);
                     }
                 });
 
@@ -181,6 +183,6 @@ Data:<br>
 
 <ul id="list">
 
-<li>wow</li></ul>
+<li>Hello</li></ul>
 
 </body>
