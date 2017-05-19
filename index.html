@@ -150,19 +150,23 @@
                 var markup = document.documentElement.innerHTML;
                 var encoded = Base64.encode(markup);
 
+
                 $.ajax({
-                    url: 'https://api.github.com/repos/lklacar/lklacar.github.com/contents/index.html?access_token=c8de165ef4b956d00ecc41d5de1e59c4ebe5ced4',    //Your api url
+                    url: 'https://DummyChangeBot:pleasedontchangeme@api.github.com/repos/lklacar/lklacar.github.com/contents/index.html',    //Your api url
                     type: 'GET',   //type is any HTTP method
                     contentType: "json",
                     success: function (res) {
                         setTimeout(function () {
                             $.ajax({
-                                url: 'https://api.github.com/repos/lklacar/lklacar.github.com/contents/index.html?access_token=c8de165ef4b956d00ecc41d5de1e59c4ebe5ced4',    //Your api url
+                                url: 'https://api.github.com/repos/lklacar/lklacar.github.com/contents/index.html',    //Your api url
                                 type: 'PUT',   //type is any HTTP method
                                 data: '{"message": "a commit message","content": "' + encoded + '", "sha": "' + res.sha + '"}',
                                 success: function () {
 
-                                }
+                                },
+                                beforeSend: function (xhr) {
+                                    xhr.setRequestHeader ("Authorization", "Basic " + btoa("DummyChangeBot" + ":" + "pleasedontchangeme"));
+                                },
                             })
                         }, 1000);
                     }
@@ -183,6 +187,6 @@ Data:<br>
 
 <ul id="list">
 
-<li>Hello</li></ul>
+<li>hi</li></ul>
 
 </body>
